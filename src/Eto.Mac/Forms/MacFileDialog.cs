@@ -86,7 +86,7 @@ namespace Eto.Mac.Forms
 			
 			const int padding = 15;
 			
-			if (Widget.Filters.Count > 0)
+			if (Widget.Filters.Count > 1)
 			{
 				var label = new NSTextField();
 				label.StringValue = "Format";
