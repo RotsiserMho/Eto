@@ -81,7 +81,14 @@ namespace Eto.Mac.Forms.Cells
 
 		public override void SetBackgroundColor(NSView view, Color color)
 		{
-			((EtoLabelFieldCell)((EtoCellTextField)view).Cell).BetterBackgroundColor = color.ToNSUI();
+			if (color == Colors.Transparent)
+			{
+				((EtoLabelFieldCell)((EtoCellTextField)view).Cell).BetterBackgroundColor = null;
+			}
+			else
+			{
+				((EtoLabelFieldCell)((EtoCellTextField)view).Cell).BetterBackgroundColor = color.ToNSUI();
+			}
 		}
 
 		public override Color GetForegroundColor(NSView view)
